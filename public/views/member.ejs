@@ -1,0 +1,114 @@
+
+<%- include('header') %>
+
+      <div class="container">
+        <% if(mData == null){ %>
+          <h3 class="text-center">No Data for this member</h3>
+        <%   } else{  %>
+          <div class="row border-top border-light border-3 pt-5 my-3">
+            <div class="col-sm-4">
+              <img src="../public/uploads/<%= mData.member_photo %>" alt="Member Image" width="200" class="border border-light float-start">
+            </div>
+            <div class="col-sm-4">
+              <h2 class="text-center m-auto"><%= mData.member_name %></h2>
+            </div>
+            <div class="col-sm-4">
+              <a href="/memberEditForm/<%= mData.member_id %>" class="btn btn-outline-warning float-end m-1">Edit Member</a>
+              <!-- <a href="" class="btn btn-outline-danger float-end m-1">Delete Member</a> -->
+            </div>
+            <!-- <span style="height: 25px;  width: 25px;  background-color: white;  border-radius: 50%;  display: inline-block;">fghjkl</span> -->
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="">Member Id.</label> <label class="float-end">:</label>
+            </div>
+            <div class="col-sm-8"><%= mData.member_id %></div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="">Contact No.</label> <label class="float-end">:</label>
+            </div>
+            <div class="col-sm-8"><%= mData.member_mobile %></div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="">Address</label> <label class="float-end">:</label>
+            </div>
+            <div class="col-sm-8"><%= mData.member_address %></div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="">Identity No.</label> <label class="float-end">:</label>
+            </div>
+            <div class="col-sm-8"><%= mData.member_identity_no %></div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="">Remark</label> <label class="float-end">:</label>
+            </div>
+            <div class="col-sm-8"><%= mData.member_remark %></div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="">Status</label> <label class="float-end">:</label>
+            </div>
+            <div class="col-sm-8">
+              <span id="memberIdSpan" hidden="true"><%= mData.member_id %></span>
+              <span id="statusSpan" hidden="true"><%= mData.member_status %></span>
+              <span id="statusData"><%= (mData.member_status == 1) ? 'Active' : 'Inactive' %></span>
+              <button class="btn btn-sm btn-info mx-5 py-0" id="statusBtn">Change</button>
+            </div>
+          </div>
+          
+          <div class="text-center border-top border-light border-3 pt-5 pb-3 mt-5">
+            <label class="fs-2 float-start">Membership Details </label>
+            <a href="/membershipAddForm/<%= mData.member_id %>" class="btn btn-outline-success float-end">Add Membership</a>
+          </div>
+        
+        <% } %>
+      </div>
+      <div class="container mt-1 py-1">
+        <table class="table table-light table-hover mt-5">
+          <thead>
+            <tr>
+              <td>S.No.</td>
+              <td>Payment</td>
+              <td>Payment Date</td>
+              <td>Start Date</td>
+              <td>End Date</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            
+          <% //console.log(membership)
+          if(membership.length == 0){ %>
+            <tr><td class="text-center" colspan="6">No Payment Received Yet ...</td></tr>
+          <%   } else{ 
+            var sn =1;
+            membership.forEach(ms =>{
+              //console.log(ms.mid)
+            %>
+            <tr>
+              <td><%= sn++; %></td>
+              <td><%= ms.payment %></td>
+              <td><%= ms.payment_date %></td>
+              <td><%= ms.start_date %></td>
+              <td><%= ms.end_date %></td>
+              <td><a href="/membershipEditForm/<%= ms.sn %>" class="btn btn-outline-warning">Edit</a></td>
+            </tr>
+              
+            <% });
+          } %>
+          </tbody>
+      </table>
+    </div>
+    <script src="../public/js/page/memberp.js"></script>
+ 
+<%- include('footer') %>

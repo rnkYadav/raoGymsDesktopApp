@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Spartan Gym</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.css">
+  </head>
+  <body class="bg-dark text-light">
+    <div class="row m-3">
+      <div class="col-sm-6">
+        <img src="../public/images/spartan_logo.jpg" alt="Member Image" width="50" height="50" class="border border-light float-start">
+        <h1 class="text-center float-start mx-4">Spartan Gym</h1>
+      </div>
+      <div class="col-sm-6">
+        <!-- <a href="/dashboard" class="btn btn-outline-info">Dashboard</a>  -->
+        <a href="/members" class="btn btn-outline-info">All Members</a> 
+        <a href="/login" class="btn btn-outline-danger float-end">Logout</a> 
+      </div>
+    </div>

@@ -1,0 +1,54 @@
+
+<%- include('header') %>
+
+    <h1 class="text-center">Enter membership details</h1>
+    <div class="container mt-5">
+        <div>
+            <form action="/membershipAddData" method="post">
+                <input type="hidden" name="mid" value="<%= mid %>">
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Payment Amount</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="number" name="payment" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Payment Date</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="date" name="payment_date" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Start Date</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="date" name="start_date" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">End Date</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="date" name="end_date" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-12 text-center form-group">
+                        <button type="submit" class="btn btn-outline-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('footer') %>

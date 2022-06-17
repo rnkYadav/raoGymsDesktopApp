@@ -1,0 +1,72 @@
+
+<%- include('header') %>
+
+    <h1 class="text-center">Enter new member details</h1>
+    <div class="container mt-5">
+        <div>
+            <form action="/memberEditData" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="member_id"  value="<%= mData.member_id %>">
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Name</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="text" name="member_name" value="<%= mData.member_name %>" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Mobile</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="number" name="member_mobile" value="<%= mData.member_mobile %>" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Address</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="text" name="member_address" value="<%= mData.member_address %>" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Identity No.</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="text" name="member_identity_no" value="<%= mData.member_identity_no %>" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Photo</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="file" name="member_photo" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-4 form-group">
+                        <label for="" class="form-label">Remark</label>
+                        <label for="" class="float-end">:</label>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <input type="text" name="member_remark" value="<%= mData.member_remark %>" class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-sm-12 text-center form-group">
+                        <button type="submit" class="btn btn-outline-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('footer') %>

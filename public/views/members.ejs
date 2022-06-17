@@ -1,0 +1,27 @@
+
+<%- include('header') %>
+
+    <div class="row container-fluid">
+      <div class="col-sm-5">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="searchInput" class="form-control" placeholder="Enter Member Name" />
+          </div>
+          <button type="button" class="btn btn-outline-primary" id="searchBtn">
+            Search
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <button class="btn btn-outline-danger" id="pendingBtn">Finished Membership Members</button>
+        <a href="/memberAddForm" class="btn btn-outline-success float-end">Add Member</a> 
+      </div>
+    </div>
+
+    <div class="container-fluid mt-4">
+      <div id="membersDiv" class="p-2"></div>
+    </div>
+
+    <script src="../public/js/page/membersp.js"></script>
+
+<%- include('footer') %>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Rao Gym</title>
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css">
+  </head>
+  <body class="bg-dark">
+      <h1 class="text-center text-light">Rao Gym</h1>
+    <div class="pt-2">   
+      <div class="container">  
+        <div class="row">  
+          <div class="col-md-8 col-xl-4 mx-auto">  
+            <div class="card card-body bg-secondary"> 
+              <h3 class="text-center text-light">Adminstrator login</h3> 
+              <form id="submitForm" method="POST" action="http://localhost:3000/admin/">  
+                
+                <div class="form-group mt-2">  
+                  <label id="username" class="m-2"> Username </label>  
+                  <input type="text" class="form-control" id="username" required="" name="username">  
+                </div>                        
+                
+                <div class="form-group mt-3">  
+                  <label class="m-2" id="password"> Password </label>  
+                  <input type="password" class="form-control" required="" id="password" name="password">  
+                </div> 
+                 
+                <div class="form-group mt-3 pt-1 text-center">  
+                  <button class="btn btn-primary btn-block" type="submit"> Log In </button>  
+                </div>  
+              </form>  
+              <!-- <a class="ml-auto border-link small-xl" href="#"> Forget Password? </a>  -->
+
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </body>
+</html>
